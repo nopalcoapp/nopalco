@@ -1,0 +1,138 @@
+
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+
+    @layer base {
+      :root {
+        --background: 240 10% 96%; /* Light Gray #F4F4F5 - Light mode default */
+        --foreground: 240 10% 3.9%; /* Dark Gray #09090B */
+
+        --card: 240 10% 100%; /* White */
+        --card-foreground: 240 10% 3.9%;
+
+        --popover: 240 10% 100%;
+        --popover-foreground: 240 10% 3.9%;
+
+        --primary: 35 100% 67%; /* brand-yellow: #ffb258 */
+        --primary-foreground: 240 10% 3.9%; 
+
+        --secondary: 347 78% 75%; /* brand-pink: #ed93a5 */
+        --secondary-foreground: 240 10% 3.9%;
+
+        --muted: 240 5% 90%; /* Lighter Gray for muted elements */
+        --muted-foreground: 240 4% 46%; /* Gray for muted text */
+
+        --accent: 35 100% 67%; 
+        --accent-foreground: 240 10% 3.9%;
+
+        --destructive: 0 70% 50%; /* Red for destructive actions */
+        --destructive-foreground: 0 0% 95%;
+
+        --border: 240 6% 90%; /* Lighter Gray for borders */
+        --input: 240 6% 93%; /* Slightly lighter than card for input fields */
+        --ring: 35 100% 67%; 
+
+        --radius: 0.5rem;
+
+        --brand-artist: 347 78% 75%; 
+        --brand-artist-foreground: 240 10% 3.9%;
+        --brand-contractor: 35 100% 67%; 
+        --brand-contractor-foreground: 240 10% 3.9%;
+      }
+
+      .dark {
+        --background: 240 10% 2%; /* Black #050505 */
+        --foreground: 0 0% 95%; /* Light Gray #F2F2F2 */
+
+        --card: 240 10% 7%; /* Dark Gray #121212 */
+        --card-foreground: 0 0% 95%;
+
+        --popover: 240 10% 7%;
+        --popover-foreground: 0 0% 95%;
+
+        --primary: 35 100% 67%; 
+        --primary-foreground: 0 0% 5%; 
+
+        --secondary: 347 78% 75%; 
+        --secondary-foreground: 0 0% 5%;
+
+        --muted: 0 0% 15%; 
+        --muted-foreground: 0 0% 60%; 
+
+        --accent: 35 100% 67%; 
+        --accent-foreground: 0 0% 5%;
+
+        --destructive: 0 70% 50%;
+        --destructive-foreground: 0 0% 95%;
+
+        --border: 0 0% 15%; 
+        --input: 0 0% 10%; 
+        --ring: 35 100% 67%;
+        
+        --brand-artist: 347 78% 75%;
+        --brand-artist-foreground: 0 0% 5%;
+        --brand-contractor: 35 100% 67%;
+        --brand-contractor-foreground: 0 0% 5%;
+      }
+    }
+
+    @layer base {
+      * {
+        @apply border-border;
+      }
+      body {
+        @apply bg-background text-foreground;
+        font-family: 'Inter', theme(fontFamily.sans);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      h1, h2, h3, h4, h5, h6 {
+        @apply font-semibold; 
+      }
+    }
+
+    /* Custom scrollbar for webkit browsers */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: hsl(var(--background) / 0.5);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: hsl(var(--muted));
+      border-radius: 3px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: hsl(var(--accent));
+    }
+
+    .text-brand-artist {
+      color: hsl(var(--brand-artist));
+    }
+    .bg-brand-artist {
+      background-color: hsl(var(--brand-artist));
+    }
+    .text-brand-artist-foreground {
+      color: hsl(var(--brand-artist-foreground));
+    }
+    .border-brand-artist {
+      border-color: hsl(var(--brand-artist));
+    }
+
+    .text-brand-contractor {
+      color: hsl(var(--brand-contractor));
+    }
+    .bg-brand-contractor {
+      background-color: hsl(var(--brand-contractor));
+    }
+    .text-brand-contractor-foreground {
+      color: hsl(var(--brand-contractor-foreground));
+    }
+    .border-brand-contractor {
+      border-color: hsl(var(--brand-contractor));
+    }
+  
